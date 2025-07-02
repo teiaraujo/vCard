@@ -1,0 +1,574 @@
+body {
+        font-family: 'Montserrat', sans-serif;
+        background-color: #f5f5f5;
+    }
+    
+    .card {
+        background: linear-gradient(145deg, #f8f8f8, #ffffff);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .gold-divider {
+        background: linear-gradient(90deg, rgba(212,201,168,0.2) 0%, rgba(212,201,168,1) 50%, rgba(212,201,168,0.2) 100%);
+    }
+    
+    .btn-contact {
+        transition: all 0.3s ease;
+    }
+    
+    .btn-contact:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(138, 154, 139, 0.3);
+    }
+    
+    .logo-text {
+        background: linear-gradient(45deg, #8A9A8B, #D4C9A8);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+    
+    .vcard-download {
+        transition: all 0.3s ease;
+    }
+    
+    .vcard-download:hover {
+        background-color: #8A9A8B;
+        color: white;
+    }
+    
+    .social-link {
+        transition: all 0.3s ease;
+    }
+    
+    .social-link:hover {
+        transform: translateY(-2px);
+    }
+    
+    .qr-container {
+        display: none;
+    }
+    
+    @media (max-width: 640px) {
+        .card {
+            margin: 1rem;
+            width: calc(100% - 2rem);
+        }
+    }
+    
+    @media print {
+        body {
+            background-color: white;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .card {
+            box-shadow: none;
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            page-break-inside: avoid;
+        }
+        
+        .qr-container {
+            display: block;
+        }
+        
+        .no-print {
+            display: none !important;
+        }
+    }
+</style>
+    <!-- Contact Info -->
+    <div class="bg-white p-6">
+        <!-- Contact Buttons -->
+        <div class="grid grid-cols-2 gap-4 mb-6 no-print">
+            <a href="#" id="whatsappButton" class="btn-contact bg-sage text-white py-3 px-4 rounded-lg flex items-center justify-center">
+                <i class="fab fa-whatsapp mr-2 text-lg"></i>
+                <span>WhatsApp</span>
+            </a>
+            <a href="mailto:aleteia@asaraujoadv.com.br" class="btn-contact bg-gold text-dark-gray py-3 px-4 rounded-lg flex items-center justify-center">
+                <i class="far fa-envelope mr-2 text-lg"></i>
+                <span>E-mail</span>
+            </a>
+        </div>
+        
+        <!-- Contact Details -->
+        <div class="space-y-4">
+            <div class="flex items-center">
+                <div class="bg-sage-light bg-opacity-20 p-2 rounded-full mr-4">
+                    <i class="fas fa-user text-sage"></i>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500">Nome</p>
+                    <p class="font-medium">Aleteia Silva Araujo</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center">
+                <div class="bg-sage-light bg-opacity-20 p-2 rounded-full mr-4">
+                    <i class="fas fa-briefcase text-sage"></i>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500">Profissão</p>
+                    <p class="font-medium">Advogada • OAB/MG 84.037</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center">
+                <div class="bg-sage-light bg-opacity-20 p-2 rounded-full mr-4">
+                    <i class="fas fa-envelope text-sage"></i>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500">E-mail</p>
+                    <a href="mailto:aleteia@asaraujoadv.com.br" class="font-medium text-sage hover:underline">aleteia@asaraujoadv.com.br</a>
+                </div>
+            </div>
+            
+            <div class="flex items-center">
+                <div class="bg-sage-light bg-opacity-20 p-2 rounded-full mr-4">
+                    <i class="fas fa-building text-sage"></i>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500">Escritório</p>
+                    <p class="font-medium">Asaraujo Advocacia</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center">
+                <div class="bg-sage-light bg-opacity-20 p-2 rounded-full mr-4">
+                    <i class="fas fa-globe text-sage"></i>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500">Website</p>
+                    <a href="http://www.asaraujoadv.com.br" target="_blank" class="font-medium text-sage hover:underline">www.asaraujoadv.com.br</a>
+                </div>
+            </div>
+            
+            <div class="flex items-center">
+                <div class="bg-sage-light bg-opacity-20 p-2 rounded-full mr-4">
+                    <i class="fab fa-linkedin-in text-sage"></i>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500">LinkedIn</p>
+                    <a href="https://linkedin.com/in/aleteia-advogada" target="_blank" class="font-medium text-sage hover:underline">in.aleteia-advogada</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- QR Code Section (visible in print mode) -->
+        <div class="qr-container mt-6 pt-6 border-t border-gray-100 text-center">
+            <p class="text-sm text-gray-500 mb-3">Escaneie para acessar meu cartão digital</p>
+            <div id="qrcode" class="mx-auto" style="width:150px; height:150px;"></div>
+        </div>
+        
+        <!-- Social Links -->
+        <div class="mt-6 pt-6 border-t border-gray-100 no-print">
+            <p class="text-sm text-gray-500 mb-4 text-center">Conecte-se</p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" id="whatsappIcon" class="social-link bg-sage-light bg-opacity-20 text-sage p-3 rounded-full flex items-center justify-center w-12 h-12">
+                    <i class="fab fa-whatsapp text-xl"></i>
+                </a>
+                <a href="mailto:aleteia@asaraujoadv.com.br" class="social-link bg-sage-light bg-opacity-20 text-sage p-3 rounded-full flex items-center justify-center w-12 h-12">
+                    <i class="far fa-envelope text-xl"></i>
+                </a>
+                <a href="http://www.asaraujoadv.com.br" target="_blank" class="social-link bg-sage-light bg-opacity-20 text-sage p-3 rounded-full flex items-center justify-center w-12 h-12">
+                    <i class="fas fa-globe text-xl"></i>
+                </a>
+                <a href="https://linkedin.com/in/aleteia-advogada" target="_blank" class="social-link bg-sage-light bg-opacity-20 text-sage p-3 rounded-full flex items-center justify-center w-12 h-12">
+                    <i class="fab fa-linkedin-in text-xl"></i>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Download vCard Button -->
+        <div class="mt-8 text-center no-print">
+            <button id="downloadVcard" class="vcard-download border-2 border-sage text-sage py-2 px-6 rounded-lg font-medium flex items-center justify-center mx-auto">
+                <i class="fas fa-address-card mr-2"></i>
+                Adicionar aos Contatos
+            </button>
+            
+            <button id="printCard" class="vcard-download border-2 border-gold text-gold py-2 px-6 rounded-lg font-medium flex items-center justify-center mx-auto mt-3">
+                <i class="fas fa-print mr-2"></i>
+                Salvar como Imagem
+            </button>
+            
+            <button id="configureWhatsapp" class="vcard-download border-2 border-sage-light text-sage-light py-2 px-6 rounded-lg font-medium flex items-center justify-center mx-auto mt-3">
+                <i class="fas fa-cog mr-2"></i>
+                Configurar WhatsApp
+            </button>
+        </div>
+        
+        <!-- WhatsApp Number Input Modal -->
+        <div id="whatsappModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden no-print">
+            <div class="bg-white p-6 rounded-lg max-w-sm w-full">
+                <h3 class="text-lg font-medium text-gray-900 mb-4">Configurar WhatsApp</h3>
+                <p class="text-sm text-gray-500 mb-4">Digite seu número de WhatsApp completo com código do país (ex: 5531999999999 para Brasil)</p>
+                <input type="text" id="whatsappInput" placeholder="5531999999999" class="w-full border border-gray-300 rounded-md px-3 py-2 mb-4">
+                <div class="flex justify-end space-x-3">
+                    <button id="cancelWhatsapp" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-md">Cancelar</button>
+                    <button id="saveWhatsapp" class="px-4 py-2 bg-sage text-white rounded-md">Salvar</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- URL Input Modal -->
+        <div id="urlModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden no-print">
+            <div class="bg-white p-6 rounded-lg max-w-sm w-full">
+                <h3 class="text-lg font-medium text-gray-900 mb-4">Configurar URL do Cartão</h3>
+                <p class="text-sm text-gray-500 mb-4">Digite a URL onde seu cartão digital está hospedado (ex: https://seuusuario.github.io/cartao-digital/)</p>
+                <input type="text" id="urlInput" placeholder="https://seuusuario.github.io/cartao-digital/" class="w-full border border-gray-300 rounded-md px-3 py-2 mb-4">
+                <div class="flex justify-end space-x-3">
+                    <button id="cancelUrl" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-md">Cancelar</button>
+                    <button id="saveUrl" class="px-4 py-2 bg-sage text-white rounded-md">Salvar</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Instructions Modal -->
+        <div id="instructionsModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden no-print">
+            <div class="bg-white p-6 rounded-lg max-w-md w-full">
+                <h3 class="text-lg font-medium text-gray-900 mb-4">Como salvar como imagem</h3>
+                <ol class="list-decimal pl-5 space-y-2 text-sm text-gray-700 mb-4">
+                    <li>Clique em "Salvar como Imagem"</li>
+                    <li>Uma nova janela será aberta com o cartão e QR code</li>
+                    <li>Clique com o botão direito e selecione "Salvar imagem como" ou "Imprimir" → "Salvar como PDF"</li>
+                    <li>Você também pode usar a captura de tela do seu dispositivo</li>
+                </ol>
+                <div class="flex justify-end">
+                    <button id="closeInstructions" class="px-4 py-2 bg-sage text-white rounded-md">Entendi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Verificar se já existe um número salvo
+    let whatsappNumber = localStorage.getItem('whatsappNumber') || '';
+    let cardUrl = localStorage.getItem('cardUrl') || '';
+    
+    // Configurar os links de WhatsApp se houver um número salvo
+    function updateWhatsappLinks() {
+        if (whatsappNumber) {
+            document.getElementById('whatsappButton').href = `https://wa.me/${whatsappNumber}`;
+            document.getElementById('whatsappIcon').href = `https://wa.me/${whatsappNumber}`;
+        } else {
+            document.getElementById('whatsappButton').href = "#";
+            document.getElementById('whatsappIcon').href = "#";
+        }
+    }
+    
+    // Gerar QR Code
+    function generateQRCode() {
+        if (cardUrl) {
+            const qrcodeElement = document.getElementById('qrcode');
+            qrcodeElement.innerHTML = ''; // Limpar QR code anterior
+            
+            new QRCode(qrcodeElement, {
+                text: cardUrl,
+                width: 150,
+                height: 150,
+                colorDark: "#8A9A8B",
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.H
+            });
+        } else {
+            showUrlModal();
+        }
+    }
+    
+    // Mostrar o modal de configuração do WhatsApp
+    function showWhatsappModal() {
+        document.getElementById('whatsappModal').classList.remove('hidden');
+        document.getElementById('whatsappInput').value = whatsappNumber;
+    }
+    
+    // Esconder o modal de configuração do WhatsApp
+    function hideWhatsappModal() {
+        document.getElementById('whatsappModal').classList.add('hidden');
+    }
+    
+    // Mostrar o modal de configuração da URL
+    function showUrlModal() {
+        document.getElementById('urlModal').classList.remove('hidden');
+        document.getElementById('urlInput').value = cardUrl;
+    }
+    
+    // Esconder o modal de configuração da URL
+    function hideUrlModal() {
+        document.getElementById('urlModal').classList.add('hidden');
+    }
+    
+    // Mostrar o modal de instruções
+    function showInstructionsModal() {
+        document.getElementById('instructionsModal').classList.remove('hidden');
+    }
+    
+    // Esconder o modal de instruções
+    function hideInstructionsModal() {
+        document.getElementById('instructionsModal').classList.add('hidden');
+    }
+    
+    // Salvar o número de WhatsApp
+    function saveWhatsappNumber() {
+        const input = document.getElementById('whatsappInput').value.trim();
+        if (input) {
+            whatsappNumber = input.replace(/\D/g, ''); // Remover caracteres não numéricos
+            localStorage.setItem('whatsappNumber', whatsappNumber);
+            updateWhatsappLinks();
+            hideWhatsappModal();
+        }
+    }
+    
+    // Salvar a URL do cartão
+    function saveCardUrl() {
+        const input = document.getElementById('urlInput').value.trim();
+        if (input) {
+            cardUrl = input;
+            localStorage.setItem('cardUrl', cardUrl);
+            hideUrlModal();
+            generateQRCode();
+        }
+    }
+    
+    // Imprimir o cartão (para salvar como imagem)
+    function printCard() {
+        if (!cardUrl) {
+            showUrlModal();
+            return;
+        }
+        
+        // Abrir uma nova janela para impressão
+        const printWindow = window.open('', '_blank');
+        printWindow.document.write(`
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <title>Cartão Digital - Aleteia Silva Araujo</title>
+                <style>
+                    body {
+                        margin: 0;
+                        padding: 20px;
+                        font-family: Arial, sans-serif;
+                    }
+                    .card-container {
+                        max-width: 500px;
+                        margin: 0 auto;
+                        border: 1px solid #ddd;
+                        border-radius: 10px;
+                        overflow: hidden;
+                        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+                    }
+                    .card-header {
+                        background-color: #8A9A8B;
+                        color: white;
+                        padding: 20px;
+                        text-align: center;
+                    }
+                    .card-header h1 {
+                        margin: 0;
+                        font-size: 24px;
+                        background: linear-gradient(45deg, #8A9A8B, #D4C9A8);
+                        -webkit-background-clip: text;
+                        background-clip: text;
+                        color: transparent;
+                    }
+                    .divider {
+                        height: 2px;
+                        width: 120px;
+                        margin: 10px auto;
+                        background: linear-gradient(90deg, rgba(212,201,168,0.2) 0%, rgba(212,201,168,1) 50%, rgba(212,201,168,0.2) 100%);
+                    }
+                    .card-header h2 {
+                        margin: 10px 0 0;
+                        font-size: 18px;
+                    }
+                    .card-header p {
+                        margin: 5px 0 0;
+                        font-size: 14px;
+                        color: #E5DFC5;
+                    }
+                    .card-body {
+                        padding: 20px;
+                        background-color: white;
+                    }
+                    .info-item {
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 15px;
+                    }
+                    .info-icon {
+                        width: 40px;
+                        height: 40px;
+                        background-color: rgba(163, 176, 164, 0.2);
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-right: 15px;
+                        color: #8A9A8B;
+                    }
+                    .info-text p:first-child {
+                        margin: 0;
+                        font-size: 12px;
+                        color: #777;
+                    }
+                    .info-text p:last-child {
+                        margin: 0;
+                        font-weight: 500;
+                    }
+                    .qr-section {
+                        margin-top: 20px;
+                        padding-top: 20px;
+                        border-top: 1px solid #eee;
+                        text-align: center;
+                    }
+                    .qr-section p {
+                        margin-bottom: 10px;
+                        font-size: 14px;
+                        color: #777;
+                    }
+                    .qr-image {
+                        width: 150px;
+                        height: 150px;
+                        margin: 0 auto;
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="card-container">
+                    <div class="card-header">
+                        <h1>Asaraujo Advocacia</h1>
+                        <div class="divider"></div>
+                        <h2>Aleteia Silva Araujo</h2>
+                        <p>Advogada • OAB/MG 84.037</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="info-item">
+                            <div class="info-icon">👤</div>
+                            <div class="info-text">
+                                <p>Nome</p>
+                                <p>Aleteia Silva Araujo</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">💼</div>
+                            <div class="info-text">
+                                <p>Profissão</p>
+                                <p>Advogada • OAB/MG 84.037</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">✉️</div>
+                            <div class="info-text">
+                                <p>E-mail</p>
+                                <p>aleteia@asaraujoadv.com.br</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">🏢</div>
+                            <div class="info-text">
+                                <p>Escritório</p>
+                                <p>Asaraujo Advocacia</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">🌐</div>
+                            <div class="info-text">
+                                <p>Website</p>
+                                <p>www.asaraujoadv.com.br</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">📱</div>
+                            <div class="info-text">
+                                <p>LinkedIn</p>
+                                <p>in.aleteia-advogada</p>
+                            </div>
+                        </div>
+                        
+                        <div class="qr-section">
+                            <p>Escaneie para acessar meu cartão digital</p>
+                            <img src="${document.querySelector('#qrcode img').src}" class="qr-image">
+                        </div>
+                    </div>
+                </div>
+            </body>
+            </html>
+        `);
+        printWindow.document.close();
+        
+        // Dar tempo para carregar e então mostrar instruções
+        setTimeout(() => {
+            showInstructionsModal();
+        }, 1000);
+    }
+    
+    // Configurar eventos
+    document.getElementById('whatsappButton').addEventListener('click', function(e) {
+        if (!whatsappNumber) {
+            e.preventDefault();
+            showWhatsappModal();
+        }
+    });
+    
+    document.getElementById('whatsappIcon').addEventListener('click', function(e) {
+        if (!whatsappNumber) {
+            e.preventDefault();
+            showWhatsappModal();
+        }
+    });
+    
+    document.getElementById('saveWhatsapp').addEventListener('click', saveWhatsappNumber);
+    document.getElementById('cancelWhatsapp').addEventListener('click', hideWhatsappModal);
+    document.getElementById('configureWhatsapp').addEventListener('click', showWhatsappModal);
+    
+    document.getElementById('saveUrl').addEventListener('click', saveCardUrl);
+    document.getElementById('cancelUrl').addEventListener('click', hideUrlModal);
+    
+    document.getElementById('printCard').addEventListener('click', printCard);
+    document.getElementById('closeInstructions').addEventListener('click', hideInstructionsModal);
+    
+    // Função para download do vCard
+    document.getElementById('downloadVcard').addEventListener('click', function() {
+        // Criar o conteúdo do vCard
+        const vCardData = 
+BEGIN:VCARD
+VERSION:3.0
+N:Araujo;Aleteia Silva;;;
+FN:Aleteia Silva Araujo
+ORG:Asaraujo Advocacia
+TITLE:Advogada - OAB/MG 84.037
+TEL;TYPE=CELL:${whatsappNumber ? '+' + whatsappNumber : ''}
+EMAIL:aleteia@asaraujoadv.com.br
+URL:http://www.asaraujoadv.com.br
+X-SOCIALPROFILE;TYPE=linkedin:https://linkedin.com/in/aleteia-advogada
+END:VCARD;
+        // Criar um Blob com os dados do vCard
+        const blob = new Blob([vCardData], { type: 'text/vcard' });
+        
+        // Criar um link de download e acioná-lo
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'aleteia_silva_araujo.vcf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    });
+    
+    // Verificar se é a primeira visita
+    window.onload = function() {
+        updateWhatsappLinks();
+        
+        // Se não houver URL configurada, solicitar
+        if (!cardUrl) {
+            setTimeout(() => {
+                showUrlModal();
+            }, 1000);
+        } else {
+            generateQRCode();
+        }
+    };
+</script>
