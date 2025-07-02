@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aleteia Silva Araujo - Cartão Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'sage': '#8A9A8B',
+                        'sage-light': '#A3B0A4',
+                        'gold': '#D4C9A8',
+                        'gold-light': '#E5DFC5',
+                        'dark-gray': '#4A4A4A'
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f5f5f5;
+        }
+        
+        .card {
+            background: linear-gradient(145deg, #f8f8f8, #ffffff);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gold-divider {
+            background: linear-gradient(90deg, rgba(212,201,168,0.2) 0%, rgba(212,201,168,1) 50%, rgba(212,201,168,0.2) 100%);
+        }
+        
+        .btn-contact {
+            transition: all 0.3s ease;
+        }
+        
+        .btn-contact:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(138, 154, 139, 0.3);
+        }
+        
+        .logo-text {
+            background: linear-gradient(45deg, #8A9A8B, #D4C9A8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .vcard-download {
+            transition: all 0.3s ease;
+        }
+        
+        .vcard-download:hover {
+            background-color: #8A9A8B;
+            color: white;
+        }
+        
+        .social-link {
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 640px) {
+            .card {
+                margin: 1rem;
+                width: calc(100% - 2rem);
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 bg-gray-100">
+    <div class="card max-w-md w-full rounded-xl overflow-hidden">
+        <!-- Header -->
+        <div class="bg-sage p-6 text-center relative">
+            <div class="absolute top-0 left-0 w-full h-full bg-sage opacity-90"></div>
+            <div class="relative z-10">
+                <h1 class="logo-text font-serif text-3xl font-bold tracking-wide mb-1">Asaraujo Advocacia</h1>
+                <div class="gold-divider h-0.5 w-32 mx-auto my-3"></div>
+                <h2 class="text-white text-xl font-medium">Aleteia Silva Araujo</h2>
+                <p class="text-gold-light mt-1 font-light">Advogada • OAB/MG 84.037</p>
+            </div>
+        </div>
+        
+        <!-- Contact Info -->
+        <div class="bg-white p-6">
+            <!-- Contact Buttons -->
+            <div class="grid grid-cols-2 gap-4 mb-6">
+                <a href="#" id="whatsappButton" class="btn-contact bg-sage text-white py-3 px-4 rounded-lg flex items-center justify-center">
+                    <i class="fab fa-whatsapp mr-2 text-lg"></i>
+                    <span>WhatsApp</span>
+                </a>
+                <a href="mailto:aleteia@asaraujoadv.com.br" class="btn-contact bg-gold text-dark-gray py-3 px-4 rounded-lg flex items-center justify-center">
+                    <i class="far fa-envelope mr-2 text-lg"></i>
+                    <span>E-mail</span>
+                </a>
+            </div>
+            
+            <!-- Contact Details -->
+            <div class="space-y-4">
+                <div class="flex items-center">
+                    <div class="bg-sage-light bg-opacity-20 p-2 rounded-full mr-4">
+                        <i class="fas fa-user text-sage"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500">Nome</p>
+                        <p class="font-medium">Aleteia Silva Araujo</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center">
+                    <div class="bg-sage-light bg-opacity-20 p-2 rounded-full mr-4">
+                        <i class="fas fa-briefcase text-sage"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500">Profissão</p>
+                        <p class="font-medium">Advogada • OAB/MG 84.037</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center">
+                    <div class="bg-sage-light bg-opacity-20 p-2 rounded-full mr-4">
+                        <i class="fas fa-envelope text-sage"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500">E-mail</p>
+                        <a href="mailto:aleteia@asaraujoadv.com.br" class="font-medium text-sage hover:underline">aleteia@asaraujoadv.com.br</a>
+                    </div>
+                </div>
+                
+                <div class="flex items-center">
+                    <div class="bg-sage-light bg-opacity-20 p-2 rounded-full mr-4">
+                        <i class="fas fa-building text-sage"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500">Escritório</p>
+                        <p class="font-medium">Asaraujo Advocacia</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center">
+                    <div class="bg-sage-light bg-opacity-20 p-2 rounded-full mr-4">
+                        <i class="fas fa-globe text-sage"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500">Website</p>
+                        <a href="http://www.asaraujoadv.com.br" target="_blank" class="font-medium text-sage hover:underline">www.asaraujoadv.com.br</a>
+                    </div>
+                </div>
+                
+                <div class="flex items-center">
+                    <div class="bg-sage-light bg-opacity-20 p-2 rounded-full mr-4">
+                        <i class="fab fa-linkedin-in text-sage"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500">LinkedIn</p>
+                        <a href="https://linkedin.com/in/aleteia-advogada" target="_blank" class="font-medium text-sage hover:underline">in.aleteia-advogada</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Social Links -->
+            <div class="mt-6 pt-6 border-t border-gray-100">
+                <p class="text-sm text-gray-500 mb-4 text-center">Conecte-se</p>
+                <div class="flex justify-center space-x-6">
+                    <a href="#" id="whatsappIcon" class="social-link bg-sage-light bg-opacity-20 text-sage p-3 rounded-full flex items-center justify-center w-12 h-12">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </a>
+                    <a href="mailto:aleteia@asaraujoadv.com.br" class="social-link bg-sage-light bg-opacity-20 text-sage p-3 rounded-full flex items-center justify-center w-12 h-12">
+                        <i class="far fa-envelope text-xl"></i>
+                    </a>
+                    <a href="http://www.asaraujoadv.com.br" target="_blank" class="social-link bg-sage-light bg-opacity-20 text-sage p-3 rounded-full flex items-center justify-center w-12 h-12">
+                        <i class="fas fa-globe text-xl"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/aleteia-advogada" target="_blank" class="social-link bg-sage-light bg-opacity-20 text-sage p-3 rounded-full flex items-center justify-center w-12 h-12">
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Download vCard Button -->
+            <div class="mt-8 text-center">
+                <button id="downloadVcard" class="vcard-download border-2 border-sage text-sage py-2 px-6 rounded-lg font-medium flex items-center justify-center mx-auto">
+                    <i class="fas fa-address-card mr-2"></i>
+                    Adicionar aos Contatos
+                </button>
+            </div>
+            
+            <!-- WhatsApp Number Input Modal -->
+            <div id="whatsappModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+                <div class="bg-white p-6 rounded-lg max-w-sm w-full">
+                    <h3 class="text-lg font-medium text-gray-900 mb-4">Configurar WhatsApp</h3>
+                    <p class="text-sm text-gray-500 mb-4">Digite seu número de WhatsApp completo com código do país (ex: 5531999999999 para Brasil)</p>
+                    <input type="text" id="whatsappInput" placeholder="5531999999999" class="w-full border border-gray-300 rounded-md px-3 py-2 mb-4">
+                    <div class="flex justify-end space-x-3">
+                        <button id="cancelWhatsapp" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-md">Cancelar</button>
+                        <button id="saveWhatsapp" class="px-4 py-2 bg-sage text-white rounded-md">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Verificar se já existe um número salvo
+        let whatsappNumber = localStorage.getItem('whatsappNumber') || '';
+        
+        // Configurar os links de WhatsApp se houver um número salvo
+        function updateWhatsappLinks() {
+            if (whatsappNumber) {
+                document.getElementById('whatsappButton').href = `https://wa.me/${whatsappNumber}`;
+                document.getElementById('whatsappIcon').href = `https://wa.me/${whatsappNumber}`;
+            } else {
+                document.getElementById('whatsappButton').href = "#";
+                document.getElementById('whatsappIcon').href = "#";
+                
+                // Mostrar modal na primeira visita
+                if (!localStorage.getItem('whatsappConfigured')) {
+                    showWhatsappModal();
+                }
+            }
+        }
+        
+        // Mostrar o modal de configuração do WhatsApp
+        function showWhatsappModal() {
+            document.getElementById('whatsappModal').classList.remove('hidden');
+            document.getElementById('whatsappInput').value = whatsappNumber;
+        }
+        
+        // Esconder o modal de configuração do WhatsApp
+        function hideWhatsappModal() {
+            document.getElementById('whatsappModal').classList.add('hidden');
+        }
+        
+        // Salvar o número de WhatsApp
+        function saveWhatsappNumber() {
+            const input = document.getElementById('whatsappInput').value.trim();
+            if (input) {
+                whatsappNumber = input.replace(/\D/g, ''); // Remover caracteres não numéricos
+                localStorage.setItem('whatsappNumber', whatsappNumber);
+                localStorage.setItem('whatsappConfigured', 'true');
+                updateWhatsappLinks();
+                hideWhatsappModal();
+            }
+        }
+        
+        // Configurar eventos
+        document.getElementById('whatsappButton').addEventListener('click', function(e) {
+            if (!whatsappNumber) {
+                e.preventDefault();
+                showWhatsappModal();
+            }
+        });
+        
+        document.getElementById('whatsappIcon').addEventListener('click', function(e) {
+            if (!whatsappNumber) {
+                e.preventDefault();
+                showWhatsappModal();
+            }
+        });
+        
+        document.getElementById('saveWhatsapp').addEventListener('click', saveWhatsappNumber);
+        document.getElementById('cancelWhatsapp').addEventListener('click', hideWhatsappModal);
+        
+        // Função para download do vCard
+        document.getElementById('downloadVcard').addEventListener('click', function() {
+            // Criar o conteúdo do vCard
+            const vCardData = 
+`BEGIN:VCARD
+VERSION:3.0
+N:Araujo;Aleteia Silva;;;
+FN:Aleteia Silva Araujo
+ORG:Asaraujo Advocacia
+TITLE:Advogada - OAB/MG 84.037
+TEL;TYPE=CELL:${whatsappNumber ? '+' + whatsappNumber : ''}
+EMAIL:aleteia@asaraujoadv.com.br
+URL:http://www.asaraujoadv.com.br
+X-SOCIALPROFILE;TYPE=linkedin:https://linkedin.com/in/aleteia-advogada
+END:VCARD`;
+            
+            // Criar um Blob com os dados do vCard
+            const blob = new Blob([vCardData], { type: 'text/vcard' });
+            
+            // Criar um link de download e acioná-lo
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'aleteia_silva_araujo.vcf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+        
+        // Inicializar os links
+        updateWhatsappLinks();
+    </script>
+</body>
+</html>
